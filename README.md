@@ -2,9 +2,9 @@
 
 할 것들 : JS map, reduce, filter 공부하기
 
-깃 생성     :   git init
-깃 스테이지 :   git add (--all/파일경로)
-깃 커밋     :   git commit -m "메세지"
+깃 생성     :   git init \
+깃 스테이지 :   git add (--all/파일경로) \
+깃 커밋     :   git commit -m "메세지" \
 깃 푸쉬     :   git push origin main(브랜치 이름)
 
 # Getting Started with Create React App
