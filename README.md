@@ -1,3 +1,7 @@
+# 리액트 공부 내용 정리하기
+
+할 것들 : JS map, reduce, filter 공부하기
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
