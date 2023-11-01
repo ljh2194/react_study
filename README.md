@@ -7,6 +7,12 @@
 깃 커밋     :   git commit -m "메세지" \
 깃 푸쉬     :   git push origin main(브랜치 이름)
 
+
+
+
+React.memo : 컴포넌트의 리렌더링을 방지하여, 성능 최적화 가능
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

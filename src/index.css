@@ -7,6 +7,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.wrap{
+  max-width: 50%;
+  margin: 0 auto;
+  /* background-color: red; */
+  width: 100%;
+  min-height: 100vh;
+  box-shadow: rgba(130, 130, 130, 0.15) 0px 0px 20px;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

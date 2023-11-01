@@ -1,11 +1,17 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState,useMemo } from 'react';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Hello from './component/hello'
 import Wrapper from './component/wrapper'
 import Counter from './component/Counter'
 import Inputs from './component/Inputs'
 import UserList from './component/UserList';
 import CreateUser from './component/CreateUser';
+import Notfound from './component/Notfound';
 
+function countActiveUsers(users) {
+  console.log('활성 사용자 수를 세는중...');
+  return users.filter(user => user.active).length;
+}
 
 function App() {
 
@@ -82,23 +88,32 @@ function App() {
       setUsers(users2)
   }
 
+  const count = useMemo(() => countActiveUsers(users), [users]);
   return (
     <div>
-        <Hello name='ljh' color='red'/>
-        <Hello color='red'/>
-        <div style={style}>{name}</div>
-        <div className="gray-box"></div>
-        <Wrapper>
+        <BrowserRouter>
+
+          <Hello name='ljh' color='red'/>
           <Hello color='red'/>
-          <Hello color='blue' isTrue={true}/>
-          <Hello color='brown' isTrue/>
-        </Wrapper>
-        <Counter />
-        <Inputs />
-        <br/>
-        <CreateUser  username={username} email={email} onChange={onChange} onCreate={onCreate}/>
-        <br/>
-        <UserList users={users}  onRemove={onRemove} onToggle={onToggle}/>
+          <div style={style}>{name}</div>
+          <div className="gray-box"></div>
+          <Wrapper>
+            <Hello color='red'/>
+            <Hello color='blue' isTrue={true}/>
+            <Hello color='brown' isTrue/>
+          </Wrapper>
+          <Counter />
+          <Inputs />
+          <br/>
+          <CreateUser  username={username} email={email} onChange={onChange} onCreate={onCreate}/>
+          <br/>
+          <UserList users={users}  onRemove={onRemove} onToggle={onToggle}/>
+          <div>활성사용자 수 : {count}</div>
+          <Routes>
+            <Route path="/" element={<Counter />}></Route>
+            <Route path="*" element={<Notfound />}></Route>
+          </Routes>
+        </BrowserRouter>
     </div>
     
   );

@@ -2,12 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Main from './Main';
 import reportWebVitals from './reportWebVitals';
+import Header from './common/Header';
+import Footer from './common/Footer';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+     <BrowserRouter>
+     <div className='wrap'>
+        <Header/>
+        <Main />
+        <Footer/>
+      </div>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
